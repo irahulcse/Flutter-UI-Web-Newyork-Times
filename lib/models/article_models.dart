@@ -15,4 +15,17 @@ class Article{
     this.summary,
   });
 
+  factory Article.fromMap(Map<String,dynamic>map){
+    return Article{
+      title: map['title'],
+      byline:map['byline'],
+      url: map['multimedia'].length>0,
+      imageUrl:map['multimedia'].length >0,
+      ? map['multitmedia'][3]['url'],
+      :'httpsL//images.unslash.com'
+      publishedDate: map['published_date'],
+      summary: map['abstract'],
+    }
+  }
+ 
 }
